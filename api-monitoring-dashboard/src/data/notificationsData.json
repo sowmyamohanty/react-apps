@@ -1,0 +1,46 @@
+{
+  "notificationsData": [
+    {
+      "id": "1",
+      "message": "New user registered: John Doe",
+      "level": "info",
+      "timestamp": "2024-06-10T09:15:23Z"
+    },
+    {
+      "id": "2",
+      "message": "Server CPU usage exceeded 85%",
+      "level": "warning",
+      "timestamp": "2024-06-10T08:47:10Z"
+    },
+    {
+      "id": "3",
+      "message": "Payment failed for invoice #10234",
+      "level": "error",
+      "timestamp": "2024-06-09T18:22:45Z"
+    },
+    {
+      "id": "4",
+      "message": "Backup completed successfully",
+      "level": "success",
+      "timestamp": "2024-06-09T03:12:08Z"
+    },
+    {
+      "id": "5",
+      "message": "New comment on support ticket #5678",
+      "level": "info",
+      "timestamp": "2024-06-08T21:55:30Z"
+    },
+    {
+      "id": "6",
+      "message": "System update available",
+      "level": "info",
+      "timestamp": "2024-06-08T14:40:00Z"
+    },
+    {
+      "id": "7",
+      "message": "Unusual login attempt detected",
+      "level": "warning",
+      "timestamp": "2024-06-07T23:05:12Z"
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+{
+  "project_name": "API Monitoring Dashboard",
+  "framework": "Material UI",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.17.0",
+    "@mui/material": "^5.15.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.0",
+    "recharts": "^2.7.2"
+  },
+  "pages": [
+    {
+      "name": "Dashboard",
+      "route": "/",
+      "description": "Main dashboard page displaying API metrics, recent activity, statistics, notifications, and response status charts.",
+      "components": [
+        {
+          "name": "Metrics Overview",
+          "type": "shared",
+          "purpose": "Displays cards for total API calls, error rate, and average response time.",
+          "data_needs": "metrics data"
+        },
+        {
+          "name": "Recent Activity",
+          "type": "shared",
+          "purpose": "Shows a list of recent API requests.",
+          "data_needs": "recent API requests"
+        },
+        {
+          "name": "API Statistics",
+          "type": "shared",
+          "purpose": "Displays a line chart of API usage over the last 30 days.",
+          "data_needs": "API usage data (last 30 days)"
+        },
+        {
+          "name": "Notifications",
+          "type": "shared",
+          "purpose": "Shows a list of recent alerts.",
+          "data_needs": "alerts data"
+        },
+        {
+          "name": "Response status Chart",
+          "type": "shared",
+          "purpose": "Displays a donut chart of API response status codes.",
+          "data_needs": "API response status code data"
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "route": "/settings",
+      "description": "Page to update user preferences such as theme and notification settings.",
+      "components": [
+        {
+          "name": "SettingsForm",
+          "type": "page-specific",
+          "purpose": "Form to update user preferences like theme and notification settings.",
+          "data_needs": "user preferences"
+        }
+      ]
+    }
+  ],
+  "components": [
+    {
+      "name": "AppHeader",
+      "type": "header",
+      "file_path": "src/components/AppHeader.tsx",
+      "description": "Top application bar displaying the project name and possibly user/account info.",
+      "props": []
+    },
+    {
+      "name": "Sidebar",
+      "type": "sidebar",
+      "file_path": "src/components/Sidebar.tsx",
+      "description": "Navigation drawer with links to Dashboard and Settings pages.",
+      "props": []
+    },
+    {
+      "name": "AppFooter",
+      "type": "footer",
+      "file_path": "src/components/AppFooter.tsx",
+      "description": "Footer with copyright information.",
+      "props": []
+    },
+    {
+      "name": "Metrics Overview",
+      "type": "shared",
+      "file_path": "src/components/MetricsOverview.tsx",
+      "description": "Displays summary cards for total API calls, error rate, and average response time using Material UI Card components.",
+      "props": [
+        {
+          "name": "metrics",
+          "type": "object",
+          "description": "Object containing totalCalls, errorRate, avgResponseTime"
+        }
+      ]
+    },
+    {
+      "name": "Recent Activity",
+      "type": "shared",
+      "file_path": "src/components/RecentActivity.tsx",
+      "description": "Displays a Material UI List of recent API requests with details like endpoint, status, and timestamp.",
+      "props": [
+        {
+          "name": "activities",
+          "type": "array",
+          "description": "Array of recent API request objects"
+        }
+      ]
+    },
+    {
+      "name": "API Statistics",
+      "type": "shared",
+      "file_path": "src/components/APIStatistics.tsx",
+      "description": "Displays a line chart (using Recharts) of API usage over the last 30 days.",
+      "props": [
+        {
+          "name": "statistics",
+          "type": "array",
+          "description": "Array of daily API usage data"
+        }
+      ]
+    },
+    {
+      "name": "Notifications",
+      "type": "shared",
+      "file_path": "src/components/Notifications.tsx",
+      "description": "Displays a list of recent alerts using Material UI List components.",
+      "props": [
+        {
+          "name": "notifications",
+          "type": "array",
+          "description": "Array of notification/alert objects"
+        }
+      ]
+    },
+    {
+      "name": "Response status Chart",
+      "type": "shared",
+      "file_path": "src/components/ResponseStatusChart.tsx",
+      "description": "Displays a donut chart (using Recharts PieChart) of API response status codes.",
+      "props": [
+        {
+          "name": "statusData",
+          "type": "array",
+          "description": "Array of status code summary objects"
+        }
+      ]
+    },
+    {
+      "name": "SettingsForm",
+      "type": "page-specific",
+      "file_path": "src/components/SettingsForm.tsx",
+      "description": "Form to update user preferences like theme and notification settings using Material UI form components.",
+      "props": [
+        {
+          "name": "preferences",
+          "type": "object",
+          "description": "Current user preferences"
+        },
+        {
+          "name": "onSubmit",
+          "type": "function",
+          "description": "Handler for form submission"
+        }
+      ]
+    }
+  ],
+  "data_schemas": [
+    {
+      "name": "metricsData",
+      "file_path": "src/data/metricsData.json",
+      "schema": {
+        "totalCalls": "number",
+        "errorRate": "number",
+        "avgResponseTime": "number"
+      }
+    },
+    {
+      "name": "recentActivityData",
+      "file_path": "src/data/recentActivityData.json",
+      "schema": [
+        {
+          "id": "string",
+          "endpoint": "string",
+          "status": "string",
+          "timestamp": "string"
+        }
+      ]
+    },
+    {
+      "name": "apiStatisticsData",
+      "file_path": "src/data/apiStatisticsData.json",
+      "schema": [
+        {
+          "date": "string",
+          "calls": "number"
+        }
+      ]
+    },
+    {
+      "name": "notificationsData",
+      "file_path": "src/data/notificationsData.json",
+      "schema": [
+        {
+          "id": "string",
+          "message": "string",
+          "level": "string",
+          "timestamp": "string"
+        }
+      ]
+    },
+    {
+      "name": "responseStatusData",
+      "file_path": "src/data/responseStatusData.json",
+      "schema": [
+        {
+          "status": "string",
+          "count": "number"
+        }
+      ]
+    },
+    {
+      "name": "userPreferences",
+      "file_path": "src/data/userPreferences.json",
+      "schema": {
+        "theme": "string",
+        "notificationsEnabled": "boolean"
+      }
+    }
+  ],
+  "styles": {
+    "type": "mui_theme",
+    "description": "Define Material UI theme with primary and secondary colors, responsive breakpoints, and typography."
+  }
+}

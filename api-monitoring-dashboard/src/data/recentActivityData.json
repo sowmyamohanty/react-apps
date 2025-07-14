@@ -1,0 +1,52 @@
+{
+  "recentActivityData": [
+    {
+      "id": "1",
+      "endpoint": "/api/users",
+      "status": "200 OK",
+      "timestamp": "2024-06-10T09:15:23Z"
+    },
+    {
+      "id": "2",
+      "endpoint": "/api/orders/12345",
+      "status": "201 Created",
+      "timestamp": "2024-06-10T09:17:41Z"
+    },
+    {
+      "id": "3",
+      "endpoint": "/api/products/987",
+      "status": "404 Not Found",
+      "timestamp": "2024-06-10T09:18:05Z"
+    },
+    {
+      "id": "4",
+      "endpoint": "/api/auth/login",
+      "status": "401 Unauthorized",
+      "timestamp": "2024-06-10T09:19:12Z"
+    },
+    {
+      "id": "5",
+      "endpoint": "/api/dashboard/metrics",
+      "status": "200 OK",
+      "timestamp": "2024-06-10T09:20:30Z"
+    },
+    {
+      "id": "6",
+      "endpoint": "/api/settings",
+      "status": "500 Internal Server Error",
+      "timestamp": "2024-06-10T09:21:44Z"
+    },
+    {
+      "id": "7",
+      "endpoint": "/api/notifications",
+      "status": "200 OK",
+      "timestamp": "2024-06-10T09:22:10Z"
+    },
+    {
+      "id": "8",
+      "endpoint": "/api/users/42",
+      "status": "204 No Content",
+      "timestamp": "2024-06-10T09:23:01Z"
+    }
+  ]
+}

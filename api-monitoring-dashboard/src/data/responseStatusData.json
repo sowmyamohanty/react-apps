@@ -1,0 +1,24 @@
+{
+  "responseStatusData": [
+    {
+      "status": "Success",
+      "count": 1240
+    },
+    {
+      "status": "Pending",
+      "count": 87
+    },
+    {
+      "status": "Failed",
+      "count": 34
+    },
+    {
+      "status": "Timeout",
+      "count": 12
+    },
+    {
+      "status": "Cancelled",
+      "count": 9
+    }
+  ]
+}
